@@ -1,3 +1,5 @@
+let card = document.getElementById("card");
+let colorPallete = document.getElementById("color-pallete");
 let minutes = document.getElementById("minutes");
 let interval = document.getElementById("interval");
 let remaining = document.getElementById("remaining");
@@ -15,6 +17,9 @@ window.addEventListener("load", () => {
         Notification.requestPermission();
         console.log("Please give permission by clicking icon beside url");
     };
+});
+colorPallete.addEventListener("click", (event) => {
+    document.body.style.backgroundColor = event.target.style.backgroundColor;
 });
 minutes.addEventListener("change", () => {
     disableButton(false);
@@ -46,9 +51,11 @@ function getRemainingTime() {
 }
 function showNotification() {
     const notification = new Notification("Hey", {
-        body: "Please, Take A Break",
+        body: "Please, Take A Break"
     });
     //reset counter after notification
+    clearInterval(counterIntervalController);
+    action.innerText = "Start";
     count = getMinutes() * 60;
     remaining.innerText = getRemainingTime();
 }
@@ -56,13 +63,11 @@ function showNotification() {
 function startInterval() {
     if (action.innerText === "Start") {
         action.innerText = "Stop";
-        intervalController = setInterval(showNotification, intervalTime);
+        setTimeout(showNotification, intervalTime);
         counterIntervalController = setInterval(updateCounter, 1000);
     }
     else {
         action.innerText = "Start";
-
-        clearInterval(intervalController);
         clearInterval(counterIntervalController);
         count = getMinutes() * 60;
         remaining.innerText = getRemainingTime();

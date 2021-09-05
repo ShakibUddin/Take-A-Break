@@ -12,14 +12,27 @@
 </head>
 
 <body>
-    <main class="container d-flex flex-column justify-content-center align-items-center">
-        <label for="minutes" class="form-label fs-3">Minutes (between 1 and 60):</label>
-        <input type="range" class="form-range w-50 m-3" min="1" max="60" id="minutes">
-        <p class="fs-5 text-dark text-center m-3 fw-bold">Minute(s): <span id="interval" class="text-success"></span></p>
-        <button id="action" type="button" class="btn btn-primary w-25">Start</button>
-        <p class="fs-3 text-dark text-center m-3 fw-bold"><span id="remaining" class="text-danger"></span></p>
-        <script src="./app.js"></script>
+    <main class="container vh-100 d-flex flex-column align-items-center justify-content-center">
+        <section id="card" class="w-50 p-5 bg-white shadow-lg p-3 mb-5 rounded">
+            <div id="color-pallete" class="d-flex justify-content-center">
+                <div class="p-3 m-3 rounded-circle" style="width: 20px; height: 20px; border-radius: 20px; cursor: pointer; background-color: violet;"></div>
+                <div class="p-3 m-3 rounded-circle" style="width: 20px; height: 20px; border-radius: 20px; cursor: pointer; background-color: lightskyblue;"></div>
+                <div class="p-3 m-3 rounded-circle" style="width: 20px; height: 20px; border-radius: 20px; cursor: pointer; background-color: tomato;"></div>
+                <div class="p-3 m-3 rounded-circle" style="width: 20px; height: 20px; border-radius: 20px; cursor: pointer; background-color: slateblue;"></div>
+                <div class="p-3 m-3 rounded-circle" style="width: 20px; height: 20px; border-radius: 20px; cursor: pointer; background-color: limegreen;"></div>
+                <div class="p-3 m-3 rounded-circle" style="width: 20px; height: 20px; border-radius: 20px; cursor: pointer; background-color: goldenrod;"></div>
+            </div>
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <label for="minutes" class="form-label fs-3 text-center fw-bold">Choose Study time <br> Minutes (between 1 and 60):</label>
+                <input type="range" class="form-range w-50 m-3" min="1" max="60" id="minutes">
+                <p class="fs-5 text-dark text-center m-3 fw-bold">Minute(s): <span id="interval" class="text-success"></span></p>
+                <button id="action" type="button" class="btn btn-primary w-25">Start</button>
+                <p class="fs-3 text-dark text-center m-3 fw-bold"><span id="remaining" class="text-danger"></span></p>
+            </div>
+        </section>
     </main>
+    <script src="./app.js"></script>
+    <script src="https://kit.fontawesome.com/2415ace42b.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
